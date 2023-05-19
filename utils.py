@@ -14,3 +14,9 @@ def find_date_range(date_list):
     earliest_date_str = earliest_date.strftime("%m/%d/%Y")
     latest_date_str = latest_date.strftime("%m/%d/%Y")
     return earliest_date_str, latest_date_str
+
+def extract_date(date_string):
+    datetime_obj = datetime.strptime(date_string, "%m/%d/%y %H:%M")
+    date_only = datetime_obj.date()
+    formatted_date = date_only.strftime("%m/%d/%Y")
+    return formatted_date
