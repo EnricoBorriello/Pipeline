@@ -20,8 +20,8 @@ pd.set_option('display.max_columns', None)
 pd.set_option('display.expand_frame_repr', False)
 
 # Custom settings: Filter or ignore the warning
-import warnings
-warnings.filterwarnings("ignore", category=pd.core.common.SettingWithCopyWarning)
+#import warnings
+#warnings.filterwarnings("ignore", category=pd.core.common.SettingWithCopyWarning)
 
 
 
