@@ -117,26 +117,26 @@ if uploaded_pre_file is not None and uploaded_post_file is not None:
   merged_df = merged_df.append(row_sum)
   dfcommas = merged_df.applymap('{:,.0f}'.format)
 
-  df = dfcommas
+  #df = dfcommas
   # Define a dictionary of custom colors for specific rows
-  custom_colors = {#'$ Confirmed Pipeline Bookings': 'white', 
-                 #'# Confirmed Pipeline Accounts': 'white',
+  #custom_colors = {#'$ Confirmed Pipeline Bookings': 'white', 
+                #'# Confirmed Pipeline Accounts': 'white',
                 #'$ Expected FTB Booking': 'lightgray', 
-                 #'# Expected FTB Accounts': 'white',
-                 '$ Total Pipeline':'lightyellow'
-                }
+                #'# Expected FTB Accounts': 'white',
+                #'$ Total Pipeline':'lightyellow'
+                #}
 
   # Function to apply custom colors to rows
-  def apply_custom_colors(row):
-      row_index = row.name
-      if row_index in custom_colors:
-          return ['background-color: {}'.format(custom_colors[row_index])] * len(row)
-      else:
-          return [''] * len(row)
+  #def apply_custom_colors(row):
+  #    row_index = row.name
+  #    if row_index in custom_colors:
+  #        return ['background-color: {}'.format(custom_colors[row_index])] * len(row)
+  #    else:
+  #        return [''] * len(row)
     
 
   # Apply the custom colors to the dataframe
-  styled_df = df.style.apply(apply_custom_colors, axis=1)
+  #styled_df = df.style.apply(apply_custom_colors, axis=1)
   # Display the styled dataframe
   
   df_total = merged_df.loc['$ Total Pipeline']
@@ -149,8 +149,8 @@ if uploaded_pre_file is not None and uploaded_post_file is not None:
   with col2:
     st.empty()
 
-  st.dataframe(styled_df)
-
+  #st.dataframe(styled_df)
+  st.dataframe(dfcommas)
 
 # Prospects (PRE-FTB) DETAIL
   with st.expander('Prospects (Pre-FTB) Detail'):
