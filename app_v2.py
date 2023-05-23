@@ -12,7 +12,7 @@ from datetime import datetime, timedelta
 # custom packages
 from utils_dates import find_date_range, extract_date
 from utils_analysis import customer_detail, partial_pipeline_summary
-from utils_visualizations import vialualize_partial_pipeline, vialualize_total_pipeline
+from utils_visualizations_v2 import vialualize_partial_pipeline, vialualize_total_pipeline
 
 
 # Custom settings: Set display options
