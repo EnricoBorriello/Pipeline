@@ -114,8 +114,8 @@ if uploaded_pre_file is not None and uploaded_post_file is not None:
   # Set a name for the new row
   row_sum.name = '$ Total Pipeline'
   # Append the sum as a new row to the dataframe
-#  merged_df = merged_df.append(row_sum)
-#  dfcommas = merged_df.applymap('{:,.0f}'.format)
+  merged_df = merged_df.append(row_sum)
+  dfcommas = merged_df.applymap('{:,.0f}'.format)
 
   #df = dfcommas
   # Define a dictionary of custom colors for specific rows
@@ -139,18 +139,18 @@ if uploaded_pre_file is not None and uploaded_post_file is not None:
   #styled_df = df.style.apply(apply_custom_colors, axis=1)
   # Display the styled dataframe
   
-#  df_total = merged_df.loc['$ Total Pipeline']
-#  df_expected = merged_df.loc['$ Expected FTB Booking']
+  df_total = merged_df.loc['$ Total Pipeline']
+  df_expected = merged_df.loc['$ Expected FTB Booking']
 
-#  col1, col2 = st.columns(2)
-#  with col1:
-#    vialualize_total_pipeline (df_total,df_expected)
-#    st.pyplot(plt)
-#  with col2:
-#    st.empty()
+  col1, col2 = st.columns(2)
+  with col1:
+    vialualize_total_pipeline (df_total,df_expected)
+    st.pyplot(plt)
+  with col2:
+    st.empty()
 
   #st.dataframe(styled_df)
-#  st.dataframe(dfcommas)
+  st.dataframe(dfcommas)
 
 # Prospects (PRE-FTB) DETAIL
   with st.expander('Prospects (Pre-FTB) Detail'):
