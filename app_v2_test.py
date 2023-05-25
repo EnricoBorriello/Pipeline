@@ -119,7 +119,7 @@ if uploaded_pre_file is not None and uploaded_post_file is not None:
 
   # Calculate the sum of pre and post
   #Reconstruct the dataframe adding the sum of confirmed and expected:
-  f = pd.DataFrame(np.vstack((
+  df = pd.DataFrame(np.vstack((
     np.array(merged_df), 
     np.array(merged_df)[0]+np.array(merged_df)[2]))  )
 
