@@ -136,7 +136,7 @@ if uploaded_pre_file is not None and uploaded_post_file is not None:
   # visualization
   #df_total = df.loc['$ Total Pipeline']
   #df_expected = df.loc['$ Expected FTB Bookings']
-  vialualize_total_pipeline (df_total,df_expected)
+  visualize_total_pipeline (df_total,df_expected)
   st.pyplot(plt)
 
     # reassign index names

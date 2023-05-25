@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
 
 
-def vialualize_partial_pipeline (detail,detail_type):
+def visualize_partial_pipeline (detail,detail_type):
 
     if detail_type == 'pre':
         label1 = '$ Expected FTB Bookings'
@@ -44,7 +44,7 @@ def vialualize_partial_pipeline (detail,detail_type):
     #return plt;
 
 
-def vialualize_total_pipeline (df_total,df_expected):
+def visalualize_total_pipeline (df_total,df_expected):
 
     ax = (df_total.T).plot(kind='bar',
                     y='$ Total Pipeline',
