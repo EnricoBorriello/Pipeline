@@ -107,22 +107,27 @@ if uploaded_pre_file is not None and uploaded_post_file is not None:
   detail_pre.set_index('Account Name', inplace=True)
   detail_post.set_index('Account Name', inplace=True)
 
-
-
-
-
-
-# ...
-
 # PIPELINE DATA
   summ_pre = partial_pipeline_summary( detail_pre , detail_type = 'pre' )
   summ_post = partial_pipeline_summary( detail_post , detail_type = 'post' )
   merged_df = pd.concat([summ_post,summ_pre], sort=False).fillna(0)
 
 
+
+
 # ...
 
 
+
+
+# ...
+
+  # replacement
+  vialualize_total_pipeline (merged_df,df_expected)
+  st.pyplot(plt)
+ 
+  #st.dataframe(styled_df)
+  st.dataframe(merged_df)
 
 
 
