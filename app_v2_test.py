@@ -141,20 +141,20 @@ if uploaded_pre_file is not None and uploaded_post_file is not None:
 
 
   # reassign index names
-  index_names = ['$ Confirmed Pipeline Bookings',
-  '# Confirmed Pipeline Accounts',
-  '$ Expected FTB Bookings',
-  '# Expected FTB Accounts',
-  '$ Total Pipeline']
+  #index_names = ['$ Confirmed Pipeline Bookings',
+  #'# Confirmed Pipeline Accounts',
+  #'$ Expected FTB Bookings',
+  #'# Expected FTB Accounts',
+  #'$ Total Pipeline']
 
-  df = df.set_index(pd.Index(index_names))
-
-
+  #df = df.set_index(pd.Index(index_names))
 
 
 
 
-  st.dataframe(df.applymap('{:,.0f}'.format))
+
+
+  #st.dataframe(df.applymap('{:,.0f}'.format))
 
 
 
