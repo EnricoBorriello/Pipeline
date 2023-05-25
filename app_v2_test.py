@@ -116,6 +116,51 @@ if uploaded_pre_file is not None and uploaded_post_file is not None:
 
 
 
+# PIPELINE DATA
+  summ_pre = partial_pipeline_summary( detail_pre , detail_type = 'pre' )
+  summ_post = partial_pipeline_summary( detail_post , detail_type = 'post' )
+  merged_df = pd.concat([summ_post,summ_pre], sort=False).fillna(0)
+  # Calculate the sum of pre and post
+  row_sum = merged_df.iloc[0] + merged_df.iloc[2]
+  # Set a name for the new row
+  row_sum.name = '$ Total Pipeline'
+  # Append the sum as a new row to the dataframe
+  merged_df = merged_df.append(row_sum)
+  dfcommas = merged_df.applymap('{:,.0f}'.format)
+
+  #df = dfcommas
+  # Define a dictionary of custom colors for specific rows
+  #custom_colors = {#'$ Confirmed Pipeline Bookings': 'white', 
+                #'# Confirmed Pipeline Accounts': 'white',
+                #'$ Expected FTB Booking': 'lightgray', 
+                #'# Expected FTB Accounts': 'white',
+                #'$ Total Pipeline':'lightyellow'
+                #}
+
+  # Function to apply custom colors to rows
+  #def apply_custom_colors(row):
+  #    row_index = row.name
+  #    if row_index in custom_colors:
+  #        return ['background-color: {}'.format(custom_colors[row_index])] * len(row)
+  #    else:
+  #        return [''] * len(row)
+    
+
+  # Apply the custom colors to the dataframe
+  #styled_df = df.style.apply(apply_custom_colors, axis=1)
+  # Display the styled dataframe
+  
+  df_total = merged_df.loc['$ Total Pipeline']
+  df_expected = merged_df.loc['$ Expected FTB Booking']
+
+  vialualize_total_pipeline (df_total,df_expected)
+  st.pyplot(plt)
+ 
+  #st.dataframe(styled_df)
+  st.dataframe(dfcommas)
+
+
+# ...
 
 
 
