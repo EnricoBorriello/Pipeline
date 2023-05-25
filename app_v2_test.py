@@ -122,12 +122,12 @@ if uploaded_pre_file is not None and uploaded_post_file is not None:
 
 # ...
 
-  # replacement
-  vialualize_total_pipeline (merged_df,df_expected)
-  st.pyplot(plt)
- 
+  # visualization
+  df_total = merged_df.loc['$ Total Pipeline']
+  df_expected = merged_df.loc['$ Expected FTB Booking']
+  vialualize_total_pipeline (df_total,df_expected)
   #st.dataframe(styled_df)
-  st.dataframe(merged_df)
+  st.dataframe(dfcommas)
 
 
 
