@@ -117,17 +117,34 @@ if uploaded_pre_file is not None and uploaded_post_file is not None:
 
 # ...
 
+  # Calculate the sum of pre and post
+  #Reconstruct the dataframe adding the sum of confirmed and expected:
+  df = pd.DataFrame(np.vstack((
+    np.array(merged_df), 
+    np.array(merged_df)[0]+np.array(merged_df)[2]))  )
 
+  # Reassign column names:
+  df.columns = list(merged_df)
+
+  # reassign index names
+  index_names = ['$ Confirmed Pipeline Bookings',
+  '# Confirmed Pipeline Accounts',
+  '$ Expected FTB Bookings',
+  '# Expected FTB Accounts',
+  '$ Total Pipeline']
+
+  df = df.set_index(pd.Index(index_names))
+  df = df.applymap('{:,.0f}'.format)
 
 
 # ...
 
   # visualization
-  df_total = merged_df.loc['$ Total Pipeline']
-  df_expected = merged_df.loc['$ Expected FTB Booking']
+  df_total = df.loc['$ Total Pipeline']
+  df_expected = df.loc['$ Expected FTB Booking']
   vialualize_total_pipeline (df_total,df_expected)
   #st.dataframe(styled_df)
-  st.dataframe(dfcommas)
+  st.dataframe(df)
 
 
 
