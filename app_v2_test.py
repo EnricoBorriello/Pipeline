@@ -138,3 +138,19 @@ if uploaded_pre_file is not None and uploaded_post_file is not None:
   #df_expected = df.loc['$ Expected FTB Bookings']
   vialualize_total_pipeline (df_total,df_expected)
   st.pyplot(plt)
+
+    # reassign index names
+  index_names = ['$ Confirmed Pipeline Bookings',
+  '# Confirmed Pipeline Accounts',
+  '$ Expected FTB Bookings',
+  '# Expected FTB Accounts',
+  '$ Total Pipeline']
+
+  df = df.set_index(pd.Index(index_names))
+  df.applymap('{:,.0f}'.format)
+
+  st.dataframe(df)
+
+
+
+
