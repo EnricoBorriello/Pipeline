@@ -150,7 +150,7 @@ if uploaded_pre_file is not None and uploaded_post_file is not None:
   #df.style.applymap(("{:,.0f}".format)
   #df.applymap('{:,.0f}'.format)
 
-  st.dataframe(df)
+  st.dataframe(df.round(0))
 
 
 
