@@ -134,7 +134,7 @@ if uploaded_pre_file is not None and uploaded_post_file is not None:
   '$ Total Pipeline']
 
   df = df.set_index(pd.Index(index_names))
-  df = df.applymap('{:,.0f}'.format)
+
 
 
 # ...
@@ -144,7 +144,9 @@ if uploaded_pre_file is not None and uploaded_post_file is not None:
   df_expected = df.loc['$ Expected FTB Bookings']
   vialualize_total_pipeline (df_total,df_expected)
   #st.dataframe(styled_df)
-  st.dataframe(df)
+
+
+  st.dataframe(df.applymap('{:,.0f}'.format))
 
 
 
