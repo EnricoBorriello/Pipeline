@@ -148,9 +148,9 @@ if uploaded_pre_file is not None and uploaded_post_file is not None:
 
   df = df.set_index(pd.Index(index_names))
   #df.style.applymap(("{:,.0f}".format)
-  #df.applymap('{:,.0f}'.format)
+  df.applymap('{:,.0f}'.format)
 
-  st.dataframe(df.round(0))
+  st.dataframe(df)
 
 
 
