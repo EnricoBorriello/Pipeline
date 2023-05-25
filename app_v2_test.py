@@ -100,3 +100,46 @@ if uploaded_pre_file is not None and uploaded_post_file is not None:
     #option = st.selectbox(
     #'Some other option:',
     #['option '+str(i) for i in range(1,5)]   )
+
+# DETAIL DATA
+  detail_pre = customer_detail(df_pre,owner)
+  detail_post = customer_detail(df_post,owner)
+  detail_pre.set_index('Account Name', inplace=True)
+  detail_post.set_index('Account Name', inplace=True)
+
+
+
+
+
+
+# ...
+
+
+
+
+
+
+
+
+# Prospects (PRE-FTB) DETAIL
+  with st.expander('Prospects (Pre-FTB) Detail'):
+    col1, col2 = st.columns(2)
+    with col1:
+      st.subheader('Prospects (Pre-FTB) Detail')
+      vialualize_partial_pipeline (detail_pre,detail_type='pre')
+      st.pyplot(plt)
+    with col2:
+      st.empty()
+    st.dataframe(detail_pre)
+
+
+# Customers (POST-FTB) DETAIL
+  with st.expander('Customers (Post-FTB) Detail'):
+    col1, col2 = st.columns(2)
+    with col1:
+      st.subheader('Prospects (Pre-FTB) Detail')
+      vialualize_partial_pipeline (detail_post,detail_type='post')
+      st.pyplot(plt)
+    with col2:
+      st.empty()
+    st.dataframe(detail_post)
