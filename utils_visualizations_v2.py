@@ -44,7 +44,7 @@ def visualize_partial_pipeline (detail,detail_type):
     #return plt;
 
 
-def visalualize_total_pipeline (df_total,df_expected):
+def visualize_total_pipeline (df_total,df_expected):
 
     ax = (df_total.T).plot(kind='bar',
                     y='$ Total Pipeline',
