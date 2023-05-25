@@ -126,6 +126,20 @@ if uploaded_pre_file is not None and uploaded_post_file is not None:
   # Reassign column names:
   df.columns = list(merged_df)
 
+
+
+  # visualization
+  df_total = df.iloc[4]
+  df_expected = df.iloc[2]
+
+
+  # visualization
+  df_total = df.loc['$ Total Pipeline']
+  df_expected = df.loc['$ Expected FTB Bookings']
+  vialualize_total_pipeline (df_total,df_expected)
+
+
+
   # reassign index names
   index_names = ['$ Confirmed Pipeline Bookings',
   '# Confirmed Pipeline Accounts',
@@ -137,12 +151,7 @@ if uploaded_pre_file is not None and uploaded_post_file is not None:
 
 
 
-# ...
 
-  # visualization
-  df_total = df.loc['$ Total Pipeline']
-  df_expected = df.loc['$ Expected FTB Bookings']
-  vialualize_total_pipeline (df_total,df_expected)
 
 
   st.dataframe(df.applymap('{:,.0f}'.format))
