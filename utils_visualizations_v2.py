@@ -9,7 +9,7 @@ import matplotlib.ticker as mticker
 def vialualize_partial_pipeline (detail,detail_type):
 
     if detail_type == 'pre':
-        label1 = '$ Expected FTB Booking'
+        label1 = '$ Expected FTB Bookings'
         label2 = '# Expected FTB Accounts'
         color = 'C1'
     if detail_type == 'post':
@@ -80,7 +80,7 @@ def vialualize_total_pipeline (df_total,df_expected):
 
     #ax.legend(loc='center left', bbox_to_anchor=(1.0, 0.5))
 
-    legend_labels = ['Confirmed Pipeline Bookings','Expected FTB Booking']
+    legend_labels = ['Confirmed Pipeline Bookings','Expected FTB Bookings']
     ax.legend(legend_labels, loc='lower left', bbox_to_anchor=(0.7, 0.8))
 
     # Display the plot and then close it
